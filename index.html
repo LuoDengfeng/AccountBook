@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="小店会员账本隐私政策：了解会员信息的本地存储、统计分析、加密备份、iCloud 钥匙串及功能反馈中的个人信息处理。">
+  <meta name="theme-color" content="#f6f5ef">
+  <title>隐私政策 · 小店会员账本</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%232f5a49'/%3E%3Cpath d='M20 17h25v32H23a5 5 0 0 1-5-5V22a5 5 0 0 1 5-5m0 0v27m7-17h8m-8 8h8' fill='none' stroke='%23fff9e9' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root { --paper:#f6f5ef; --card:#fffefa; --ink:#243b32; --body:#46564d; --muted:#667268; --green:#2f5a49; --pale:#e9eee4; --line:#dedfd5; --amber:#a6612d; --warm:#faf0df; --radius:20px; }
+    * { box-sizing:border-box; }
+    html { scroll-padding-top:105px; }
+    body { margin:0; background:var(--paper); color:var(--body); font:16px/1.85 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; -webkit-font-smoothing:antialiased; overflow-wrap:anywhere; }
+    a { color:var(--green); text-underline-offset:4px; }
+    a:hover { color:#153b2a; }
+    a:focus-visible, summary:focus-visible { outline:3px solid var(--amber); outline-offset:5px; border-radius:3px; }
+    .skip { position:absolute; left:18px; top:-80px; z-index:10; background:var(--green); color:white; padding:10px 18px; }
+    .skip:focus { top:12px; color:white; }
+    .shell { max-width:1120px; margin:auto; padding:0 40px; }
+    .header { border-bottom:1px solid var(--line); }
+    .header-inner { display:flex; align-items:center; justify-content:space-between; min-height:88px; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; color:var(--ink); text-decoration:none; font-size:17px; font-weight:650; letter-spacing:.02em; }
+    .brand-icon { width:42px; height:42px; flex-shrink:0; }
+    .header-label { color:var(--muted); font-size:13px; }
+    .hero { padding:66px 0 42px; }
+    .eyebrow { display:flex; align-items:center; gap:8px; color:var(--green); font-size:13px; font-weight:600; letter-spacing:.12em; }
+    .dot { width:7px; height:7px; border-radius:50%; background:#5f8065; }
+    h1,h2,h3 { color:var(--ink); line-height:1.4; }
+    h1 { font-size:clamp(36px,6vw,52px); letter-spacing:-.04em; margin:15px 0 16px; font-weight:700; }
+    .lead { max-width:660px; margin:0; font-size:17px; line-height:1.9; }
+    .dates { display:flex; flex-wrap:wrap; gap:8px 24px; margin-top:24px; color:var(--muted); font-size:13px; }
+    .principles { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:48px; }
+    .principle { background:var(--pale); border:1px solid #dbe3d5; border-radius:16px; padding:20px 22px; }
+    .principle svg { width:24px; height:24px; display:block; color:var(--green); margin-bottom:12px; }
+    .principle strong { display:block; color:var(--ink); font-size:16px; margin-bottom:3px; }
+    .principle p { margin:0; font-size:13px; line-height:1.75; }
+    .layout { display:grid; grid-template-columns:188px minmax(0,1fr); gap:44px; padding-bottom:60px; align-items:start; }
+    .toc { position:sticky; top:30px; font-size:13px; }
+    .toc-label { margin:0 0 15px; color:var(--ink); font-size:13px; font-weight:650; letter-spacing:.08em; }
+    .toc ol { padding:0; list-style:none; margin:0; border-left:1px solid var(--line); }
+    .toc li { margin:0; }
+    .toc a { display:block; padding:7px 0 7px 16px; text-decoration:none; color:var(--muted); line-height:1.6; }
+    .toc a:hover { color:var(--green); background:#e9eee470; }
+    .toc-help { margin-top:24px; padding-top:20px; border-top:1px solid var(--line); font-size:12px; }
+    .toc-help p { margin:0 0 5px; }
+    .policy { min-width:0; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:8px 34px 10px; }
+    section { padding:28px 0; border-bottom:1px solid var(--line); }
+    section:last-child { border-bottom:0; }
+    h2 { display:flex; align-items:baseline; gap:12px; margin:0 0 17px; font-size:21px; font-weight:650; }
+    .number { font-size:12px; font-weight:600; color:#6f7e68; letter-spacing:.06em; font-variant-numeric:tabular-nums; }
+    h3 { font-size:16px; font-weight:650; margin:22px 0 8px; }
+    p { margin:0 0 13px; }
+    section > :last-child { margin-bottom:0; }
+    strong { color:var(--ink); font-weight:650; }
+    ul { padding-left:21px; margin:12px 0; }
+    li { padding-left:3px; margin:7px 0; }
+    .note { border-left:3px solid #b98648; background:var(--warm); border-radius:0 10px 10px 0; padding:14px 17px; margin:18px 0; font-size:14px; }
+    .note p { margin:0; }
+    .table-wrap { border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:18px 0; }
+    table { width:100%; border-collapse:collapse; font-size:14px; line-height:1.8; }
+    th,td { padding:13px 15px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
+    th { background:#eef0e8; color:var(--ink); font-size:13px; font-weight:650; }
+    th:first-child,td:first-child { width:25%; }
+    tr:last-child td { border-bottom:0; }
+    td:first-child { font-weight:600; color:var(--ink); }
+    .small { color:var(--muted); font-size:13px; }
+    .contact { padding:22px; border-radius:14px; background:var(--pale); margin:18px 0 0; }
+    .contact p { margin:0 0 6px; font-size:14px; }
+    .contact a { font-size:clamp(17px,3vw,22px); font-weight:650; }
+    .contact .small { margin:10px 0 0; font-size:13px; }
+    code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.9em; }
+    footer { border-top:1px solid var(--line); padding:25px 0 32px; }
+    .footer-inner { display:flex; gap:14px; justify-content:space-between; align-items:center; color:var(--muted); font-size:12px; }
+    .footer-inner p { margin:0; }
+    .footer-inner a { color:var(--muted); }
+    @media (max-width:800px) {
+      .shell { padding:0 24px; }
+      .layout { grid-template-columns:1fr; gap:22px; }
+      .toc { position:static; }
+      .toc ol { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border:1px solid var(--line); padding:8px; border-radius:12px; }
+      .toc a { padding:9px 8px; }
+      .toc-label { margin-bottom:10px; }
+      .toc-help { display:none; }
+      .policy { padding:6px 26px; }
+      .principles { margin-bottom:30px; }
+    }
+    @media (max-width:520px) {
+      .shell { padding:0 20px; }
+      .header-inner { min-height:76px; }
+      .brand { font-size:15px; gap:9px; }
+      .brand-icon { width:36px; height:36px; }
+      .header-label { font-size:12px; }
+      .hero { padding:40px 0 27px; }
+      h1 { margin:12px 0 14px; }
+      .lead { font-size:15px; }
+      .dates { font-size:12px; gap:5px 16px; margin-top:20px; }
+      .principles { grid-template-columns:1fr; gap:9px; }
+      .principle { padding:14px 17px; display:grid; grid-template-columns:24px 1fr; column-gap:12px; }
+      .principle svg { grid-row:span 2; margin:4px 0 0; }
+      .principle strong { font-size:15px; margin:0; }
+      .toc ol { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .policy { padding:4px 20px; border-radius:16px; }
+      section { padding:24px 0; font-size:15px; }
+      h2 { font-size:19px; gap:9px; }
+      .table-wrap { border:0; border-radius:0; }
+      table,tbody,tr,td { display:block; }
+      thead { display:none; }
+      tr { padding:12px 0; border-top:1px solid var(--line); }
+      tr:last-child { border-bottom:1px solid var(--line); }
+      td,td:first-child { width:100%; padding:0; border:0; }
+      td:first-child { margin-bottom:5px; }
+      .contact { padding:16px; }
+      .footer-inner { flex-direction:column; align-items:flex-start; gap:7px; }
+    }
+    @media print {
+      body { background:white; color:#222; font-size:11pt; }
+      .shell { max-width:none; padding:0; }
+      .header { border-bottom:1px solid #aaa; }
+      .header-inner { min-height:65px; }
+      .hero { padding:26px 0; }
+      h1 { font-size:28pt; }
+      .principles,.toc,.skip,.back-top { display:none; }
+      .layout { display:block; padding-bottom:0; }
+      .policy { border:0; padding:0; }
+      section { padding:18px 0; }
+      h2,h3 { break-after:avoid; }
+      .contact,.note,tr { break-inside:avoid; }
+      a { color:#222; }
+      footer { margin-top:20px; }
+    }
+  </style>
+</head>
+<body id="top">
+  <a class="skip" href="#policy">跳至隐私政策正文</a>
+  <header class="header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="小店会员账本，返回页首">
+        <svg class="brand-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#2f5a49"/><path d="M15 12.5h19v24H17a4 4 0 0 1-4-4v-16a4 4 0 0 1 4-4m0 0v20m6-12h6m-6 6h6" stroke="#fff9e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>小店会员账本</span>
+      </a>
+      <span class="header-label">隐私与数据保护</span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="hero">
+      <div class="eyebrow"><span class="dot" aria-hidden="true"></span>认真记账，妥善保护</div>
+      <h1>隐私政策</h1>
+      <p class="lead">你的账本，值得被认真对待。这里说明“小店会员账本”如何处理会员与账目信息，以及你可以如何管理这些数据。</p>
+      <div class="dates"><span>更新日期：<time datetime="2026-11-11">2026 年 11 月 11 日</time></span><span>生效日期：<time datetime="2026-11-11">2026 年 11 月 11 日</time></span></div>
+    </div>
+
+    <div class="principles" aria-label="隐私要点">
+      <div class="principle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10 18h4M9 6h6"/></svg>
+        <strong>日常记账保存在本机</strong><p>会员、流水与统计无需业务服务器。</p>
+      </div>
+      <div class="principle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 20 6v5.5c0 5-5 8.5-8 10-3-1.5-8-5-8-10V6l8-3.5Z"/><path d="m8.5 12 2.4 2.4 4.6-5"/></svg>
+        <strong>手动备份采用加密</strong><p>备份文件与解密密钥分别保存。</p>
+      </div>
+      <div class="principle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+        <strong>反馈由你确认发送</strong><p>不会自动附带会员资料或账本。</p>
+      </div>
+    </div>
+
+    <div class="layout">
+      <nav class="toc" aria-label="隐私政策目录">
+        <p class="toc-label">本页内容</p>
+        <ol>
+          <li><a href="#scope">01 适用范围与责任</a></li>
+          <li><a href="#data">02 处理哪些信息</a></li>
+          <li><a href="#use">03 信息如何使用</a></li>
+          <li><a href="#backup">04 存储与加密备份</a></li>
+          <li><a href="#feedback">05 功能反馈</a></li>
+          <li><a href="#services">06 系统服务与权限</a></li>
+          <li><a href="#rights">07 你的信息管理权利</a></li>
+          <li><a href="#security">08 保存期限与安全</a></li>
+          <li><a href="#children">09 未成年人信息</a></li>
+          <li><a href="#website">10 本网页的访问</a></li>
+          <li><a href="#changes">11 政策更新</a></li>
+          <li><a href="#contact">12 联系我们</a></li>
+        </ol>
+        <div class="toc-help"><p>有隐私相关问题？</p><a href="mailto:731652307@qq.com">731652307@qq.com</a></div>
+      </nav>
+
+      <article class="policy" id="policy" aria-label="隐私政策正文">
+        <section id="scope">
+          <h2><span class="number">01</span>适用范围与责任</h2>
+          <p>本政策适用于“小店会员账本”当前提供的本地会员管理、充值与消费记账、统计分析、备份恢复及功能反馈服务。应用由<strong>小店会员账本开发者</strong>提供，联系邮箱为 <a href="mailto:731652307@qq.com">731652307@qq.com</a>（下称“我们”）。</p>
+          <p>本应用供商家记录会员储值及消费情况，<strong>不提供实际收款、转账或支付服务，无需注册应用账户</strong>。日常记账可离线使用；你选择使用的 iCloud、文件服务及邮件服务可能需要联网。</p>
+          <p>商家自行决定记录哪些会员信息、记录目的及保存方式，应依法向会员说明并取得所需授权，仅记录经营所必需的信息。我们不会通过应用自动接收商家的会员资料或账本。会员如需查询、更正其在商家处的记录，请先联系相应商家。</p>
+        </section>
+
+        <section id="data">
+          <h2><span class="number">02</span>我们处理哪些信息</h2>
+          <p>应用在你的设备上处理以下信息，用于提供你选择的功能：</p>
+          <div class="table-wrap">
+            <table aria-label="应用处理的信息类别与用途">
+              <thead><tr><th scope="col">信息类别</th><th scope="col">具体内容与用途</th></tr></thead>
+              <tbody>
+                <tr><td>会员资料</td><td>手机号、选填姓名、创建时间及应用生成的内部标识。手机号用于区分会员、避免重复建档；姓名不填也可以正常记账。</td></tr>
+                <tr><td>店铺与预设项目</td><td>店铺名称，充值套餐与消费项目的名称、类型、金额、赠送金额、启用状态及创建时间，用于快速记账。</td></tr>
+                <tr><td>充值与消费流水</td><td>关联会员、记账时的姓名与手机号、项目名称、充值或消费类型、金额、赠送金额、交易后余额、备注及时间，用于账目追溯与本地统计。临时金额记录也包含在内。</td></tr>
+                <tr><td>备份相关信息</td><td>上次成功保存备份的时间，用于本地提醒；你导出的整本账本备份，以及系统生成的备份密钥与密钥标识，用于加密和恢复。</td></tr>
+                <tr><td>你主动发送的反馈</td><td>反馈类型、文字、选填联系信息，以及应用名称、应用版本与构建号、iOS 版本，用于答复建议或排查问题。通过邮件发送时，还会包含邮件服务提供的发件地址等信息。</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>请谨慎填写备注和反馈，避免输入与记账、问题处理无关的身份证件、银行卡、健康信息等敏感内容；发送截图或其他材料前，请遮盖不必要的会员信息。</p>
+        </section>
+
+        <section id="use">
+          <h2><span class="number">03</span>信息如何使用</h2>
+          <p>会员管理、余额计算、流水查询、时间段统计、项目排行及项目明细分析均在本机完成。应用会保留记账时的资料快照，便于核对历史记录。</p>
+          <p>当前版本没有广告、第三方用户行为统计或广告追踪 SDK，不读取广告标识符，也不将会员或账目信息用于广告投放、用户画像或出售。我们不会通过应用自动上传你的账本至开发者服务器。</p>
+          <p>我们仅在你主动发送反馈后，接收并使用你发送的内容，以沟通和解决相关问题；除提供你选择的服务、依法履行必要义务外，不将其用于无关目的。</p>
+        </section>
+
+        <section id="backup">
+          <h2><span class="number">04</span>本地存储与加密备份</h2>
+          <h3>本机账本</h3>
+          <p>会员、店铺、项目和流水存储在应用沙盒内的 SQLite 数据库中，依赖 iOS 的沙盒与文件保护机制。应用的备份提醒只检查本机记录的备份时间，<strong>提醒本身不会自动导出或上传账本</strong>。当前不提供多设备账目实时同步。</p>
+          <h3>你主动导出的备份</h3>
+          <p>在你选择“导出完整备份”后，应用将整本账本使用 AES-256-GCM 加密，生成 <code>会员账本备份.xdbackup</code> 文件。你通过系统文件窗口决定将其保存在本机、iCloud 云盘或其他文件服务中；开发者不会收到该备份。</p>
+          <p>无需自行设置备份密码。随机生成的加密密钥保存在系统钥匙串中，与备份文件分离，并可通过 iCloud“密码与钥匙串”同步。密钥不会作为明文附在备份文件中，也不会发送给开发者。</p>
+          <div class="note"><p><strong>换机恢复需要同时拥有备份文件与对应密钥。</strong>请使用同一 Apple 账户，开启 iCloud“密码与钥匙串”并等待同步完成。文件保存成功不代表密钥已同步；若密钥完全丢失，我们无法补发密钥或解密账本。</p></div>
+          <p>恢复前需由你确认，恢复会用备份内容替换本机账本，不能合并。当前仍兼容旧版明文 JSON 备份的导入；<strong>已有的旧版明文文件不会自动加密</strong>，请另行妥善保管或删除。</p>
+          <h3>系统设备备份</h3>
+          <p>独立于上述手动导出功能，iOS、iCloud 或电脑设备备份可能依据你的系统设置包含应用数据，其处理规则以 Apple 的相应服务为准。应用不会将这些系统备份描述为已通过本应用的文件加密流程。</p>
+        </section>
+
+        <section id="feedback">
+          <h2><span class="number">05</span>功能反馈与邮件</h2>
+          <p>反馈为可选功能，不使用不会影响日常记账。应用可以准备发往 <a href="mailto:731652307@qq.com">731652307@qq.com</a> 的邮件，或由你选择系统分享、复制反馈文字。<strong>邮件需由你确认发送，分享目的地由你选择</strong>；复制仅将相应文字写入系统剪贴板，不代表已经发送。</p>
+          <p>准备的反馈只包括你填写的反馈类型、内容、选填联系信息和应用、系统版本信息，<strong>不会自动附带会员名单、交易流水、数据库、备份文件或诊断日志</strong>。你可以在邮件发送前检查内容。</p>
+          <p>邮件及分享由你所选的服务提供商处理，收件邮箱由 QQ 邮箱提供邮件服务。我们收到的反馈仅用于沟通、排查和改进相关问题。请不要通过反馈发送整本账本或不必要的会员个人信息。</p>
+        </section>
+
+        <section id="services">
+          <h2><span class="number">06</span>系统服务、第三方与权限</h2>
+          <p>应用没有内置第三方广告、统计或社交登录 SDK。使用以下可选系统功能时，相关服务提供商会按自身条款处理对应数据：</p>
+          <ul>
+            <li><strong>Apple 系统服务：</strong>处理你选择使用的 iCloud 云盘、iCloud“密码与钥匙串”、设备备份等服务。你可以在系统设置中管理，具体处理参见 <a href="https://www.apple.com/legal/privacy/szh/">Apple 隐私政策</a>。</li>
+            <li><strong>文件服务：</strong>仅在你选择导入或导出文件时，访问你选定的文件或保存位置；若选择其他云盘，该文件将由对应服务提供商处理。</li>
+            <li><strong>邮件与分享服务：</strong>根据你的发送、分享操作处理反馈内容及相应发件信息，处理范围由你选择的服务及其规则决定。</li>
+          </ul>
+          <p>当前版本不申请通讯录、定位、相机、照片库、麦克风或广告跟踪权限，不读取你的 Apple 账户密码，也不主动读取系统剪贴板。</p>
+          <p>我们不主动向第三方出售、出租或提供通过反馈收到的个人信息。如需因法律法规或有权机关的合法要求处理，我们仅在适用要求的必要范围内进行。系统云服务及邮件服务的数据存储地点和传输安排，以相应服务提供商的说明和你的设置为准。</p>
+        </section>
+
+        <section id="rights">
+          <h2><span class="number">07</span>如何管理你的信息</h2>
+          <ul>
+            <li><strong>查阅与导出：</strong>商家可在应用中查看会员、余额、历史流水和统计，并导出完整加密备份。</li>
+            <li><strong>更正：</strong>可编辑会员的当前姓名、手机号和预设项目。为保留记账依据，修改当前会员资料或预设不会改写历史流水中的姓名、手机号、项目和金额快照。</li>
+            <li><strong>删除本机数据：</strong>当前版本没有逐条删除会员、流水或一键清空账本的入口。如需移除本机应用数据，可在 iOS 中选择“删除 App”；“卸载 App（保留文稿与数据）”不等同于删除数据。操作前请确认是否需要保留账目或备份。</li>
+            <li><strong>管理独立副本：</strong>删除 App 不会自动删除已导出的备份、云盘文件、系统设备备份、钥匙串密钥或已发送邮件。请分别通过“文件”、iCloud、设备备份或邮件服务管理；当前应用没有单独删除备份密钥的入口，密钥丢失会影响恢复。</li>
+            <li><strong>停止可选处理：</strong>可不使用备份或反馈功能，并在系统中管理相关云服务设置。停止服务不会自动撤回已同步、已发送或已保存的副本。</li>
+          </ul>
+          <p>我们无法远程读取、更正或删除仅保存在商家设备中的账本。会员对商家记录提出个人信息请求时，应先联系相应商家，由商家依法处理并说明当前功能限制。</p>
+          <p>对于你直接发送给我们的反馈，可通过下方邮箱申请查阅、更正、删除相关信息，或提出隐私投诉。我们会在核实请求后及时处理；为确认身份只要求必要的信息，不要求你发送整本账本。依法必须保留的内容将在必要范围及期限内处理。</p>
+        </section>
+
+        <section id="security">
+          <h2><span class="number">08</span>保存期限与安全措施</h2>
+          <p>本地账本由商家保管，不设自动到期删除期限。商家应根据经营需要及适用的账目保存义务确定保留时间，避免长期保存不必要的个人信息。独立备份及系统副本的保存期限，取决于你的操作和所选服务。</p>
+          <p>我们收到的反馈在答复、排查相关问题及履行必要义务所需的期间内保存；相关目的实现后，删除或去除不再必要的个人信息。你也可以主动提出删除请求。邮件服务提供商可能依据自身规则保留安全日志或备份。</p>
+          <p>应用使用系统沙盒、文件保护以及导出备份加密等措施保护数据，但任何存储或传输方式都无法保证绝对安全。请保护设备解锁密码、Apple 账户和邮箱，谨慎分享备份，并定期确认备份及密钥的可用性。</p>
+        </section>
+
+        <section id="children">
+          <h2><span class="number">09</span>未成年人个人信息</h2>
+          <p>本应用面向商家经营记账，并非面向未满 14 周岁儿童提供服务。商家如因必要经营活动记录儿童个人信息，应依法取得监护人同意、说明处理目的并采取相应保护措施，避免录入非必要信息。</p>
+          <p>如你认为发送给我们的反馈中包含未经适当授权的儿童个人信息，请联系下方邮箱，我们会核实并处理。</p>
+        </section>
+
+        <section id="website">
+          <h2><span class="number">10</span>访问本隐私政策网页</h2>
+          <p>本网页不设置分析、广告或追踪脚本，不使用 Cookie 或浏览器本地存储来识别访客，也不加载外部字体或广告资源。阅读本页无需登录。</p>
+          <p>若本页通过 GitHub Pages 发布，GitHub 会作为托管服务商提供网页，并可能为安全等目的记录访问 IP 等信息，具体参见 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隐私声明</a>。点击邮件链接或其他外部链接后，将由相应应用或网站按其规则处理你主动提供的信息。</p>
+        </section>
+
+        <section id="changes">
+          <h2><span class="number">11</span>本政策如何更新</h2>
+          <p>如功能或个人信息处理方式发生变化，我们会相应更新本政策并修改页首日期。对处理目的、信息类型、提供对象或你的权利产生重大影响的变化，将通过应用内说明或其他适当方式提示；需要另行取得同意时，在相关处理前依法征求同意。</p>
+        </section>
+
+        <section id="contact">
+          <h2><span class="number">12</span>联系我们</h2>
+          <p>如对本政策、个人信息处理方式有疑问，或希望提出相关请求，请联系：</p>
+          <div class="contact">
+            <p><strong>小店会员账本开发者</strong></p>
+            <a href="mailto:731652307@qq.com?subject=%E5%B0%8F%E5%BA%97%E4%BC%9A%E5%91%98%E8%B4%A6%E6%9C%AC%EF%BC%9A%E9%9A%90%E7%A7%81%E4%B8%8E%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF">731652307@qq.com</a>
+            <p class="small">请说明问题和方便回复的方式，避免附上不必要的会员资料或账本文件。</p>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer><div class="shell footer-inner"><p>小店会员账本 · 好生意，每天有数</p><a class="back-top" href="#top">返回页首 ↑</a></div></footer>
+</body>
+</html>
