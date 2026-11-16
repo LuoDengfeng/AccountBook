@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-language="zh">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,22 @@
   <meta name="description" content="小店会员账本隐私政策：了解会员信息的本地存储、统计分析、加密备份、云盘保存及功能反馈中的个人信息处理。">
   <meta name="theme-color" content="#f6f5ef">
   <title>隐私政策 · 小店会员账本</title>
+  <script>
+    (function () {
+      var language;
+      var query = new URLSearchParams(location.search).get("lang");
+      if (query === "zh" || query === "en") language = query;
+      if (!language) {
+        try { language = localStorage.getItem("accountbook-site-language"); } catch (error) {}
+      }
+      if (language !== "zh" && language !== "en") {
+        var preferred = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+        language = preferred.toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+      }
+      document.documentElement.dataset.language = language;
+      document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+    })();
+  </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%232f5a49'/%3E%3Cpath d='M20 17h25v32H23a5 5 0 0 1-5-5V22a5 5 0 0 1 5-5m0 0v27m7-17h8m-8 8h8' fill='none' stroke='%23fff9e9' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <style>
     :root { --paper:#f6f5ef; --card:#fffefa; --ink:#243b32; --body:#46564d; --muted:#667268; --green:#2f5a49; --pale:#e9eee4; --line:#dedfd5; --amber:#a6612d; --warm:#faf0df; --radius:20px; }
@@ -76,6 +92,14 @@
     .footer-inner { display:flex; gap:14px; justify-content:space-between; align-items:center; color:var(--muted); font-size:12px; }
     .footer-inner p { margin:0; }
     .footer-inner a { color:var(--muted); }
+    html[data-language="en"] body { visibility:hidden; }
+    html.language-ready body { visibility:visible; }
+    .header-side { display:flex; align-items:center; gap:18px; }
+    .language-switch { display:inline-flex; padding:3px; border:1px solid var(--line); border-radius:8px; background:var(--card); }
+    .language-switch button { min-width:54px; min-height:30px; padding:4px 9px; border:0; border-radius:5px; background:transparent; color:var(--muted); font:600 12px/1 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; cursor:pointer; }
+    .language-switch button:hover { color:var(--ink); }
+    .language-switch button:focus-visible { outline:3px solid var(--amber); outline-offset:3px; }
+    .language-switch button.active { color:white; background:var(--green); }
     @media (max-width:800px) {
       .shell { padding:0 24px; }
       .layout { grid-template-columns:1fr; gap:22px; }
@@ -89,10 +113,12 @@
     }
     @media (max-width:520px) {
       .shell { padding:0 20px; }
-      .header-inner { min-height:76px; }
+      .header-inner { min-height:76px; flex-wrap:wrap; padding-top:12px; padding-bottom:12px; gap:8px 12px; }
       .brand { font-size:15px; gap:9px; }
       .brand-icon { width:36px; height:36px; }
-      .header-label { font-size:12px; }
+      .header-label { display:none; }
+      .header-side { width:100%; justify-content:flex-end; gap:10px; }
+      .language-switch button { min-width:48px; padding:4px 7px; }
       .hero { padding:40px 0 27px; }
       h1 { margin:12px 0 14px; }
       .lead { font-size:15px; }
@@ -123,6 +149,7 @@
       .hero { padding:26px 0; }
       h1 { font-size:28pt; }
       .principles,.toc,.skip,.back-top { display:none; }
+      .language-switch { display:none; }
       .layout { display:block; padding-bottom:0; }
       .policy { border:0; padding:0; }
       section { padding:18px 0; }
@@ -133,7 +160,7 @@
     }
   </style>
 </head>
-<body id="top">
+<body id="top" data-page="privacy">
   <a class="skip" href="#policy">跳至隐私政策正文</a>
   <header class="header">
     <div class="shell header-inner">
@@ -141,7 +168,13 @@
         <svg class="brand-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#2f5a49"/><path d="M15 12.5h19v24H17a4 4 0 0 1-4-4v-16a4 4 0 0 1 4-4m0 0v20m6-12h6m-6 6h6" stroke="#fff9e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>小店会员账本</span>
       </a>
-      <span class="header-label">隐私与数据保护</span>
+      <div class="header-side">
+        <span class="header-label">隐私与数据保护</span>
+        <div class="language-switch" role="group" aria-label="语言 / Language">
+          <button type="button" data-set-language="zh" aria-pressed="true">中文</button>
+          <button type="button" data-set-language="en" aria-pressed="false">English</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -150,7 +183,7 @@
       <div class="eyebrow"><span class="dot" aria-hidden="true"></span>认真记账，妥善保护</div>
       <h1>隐私政策</h1>
       <p class="lead">你的账本，值得被认真对待。这里说明“小店会员账本”如何处理会员与账目信息，以及你可以如何管理这些数据。</p>
-      <div class="dates"><span>更新日期：<time datetime="2026-11-12">2026 年 11 月 12 日</time></span><span>生效日期：<time datetime="2026-11-12">2026 年 11 月 12 日</time></span></div>
+      <div class="dates"><span>更新日期：<time datetime="2026-11-16">2026 年 11 月 16 日</time></span><span>生效日期：<time datetime="2026-11-16">2026 年 11 月 16 日</time></span></div>
     </div>
 
     <div class="principles" aria-label="隐私要点">
@@ -282,7 +315,7 @@
 
         <section id="website">
           <h2><span class="number">10</span>访问本隐私政策网页</h2>
-          <p>本网页不设置分析、广告或追踪脚本，不使用 Cookie 或浏览器本地存储来识别访客，也不加载外部字体或广告资源。阅读本页无需登录。</p>
+          <p>本网页不设置分析、广告或追踪脚本，不使用 Cookie。浏览器本地存储仅用于记住你手动选择的页面语言，不用于识别或追踪访客。本页无需登录，也不加载外部字体或广告资源。</p>
           <p>若本页通过 GitHub Pages 发布，GitHub 会作为托管服务商提供网页，并可能为安全等目的记录访问 IP 等信息，具体参见 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隐私声明</a>。点击邮件链接或其他外部链接后，将由相应应用或网站按其规则处理你主动提供的信息。</p>
         </section>
 
@@ -305,5 +338,6 @@
   </main>
 
   <footer><div class="shell footer-inner"><p>小店会员账本 · 好生意，每天有数</p><a class="back-top" href="#top">返回页首 ↑</a></div></footer>
+  <script src="language.js"></script>
 </body>
 </html>
